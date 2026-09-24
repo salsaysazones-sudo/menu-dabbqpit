@@ -631,46 +631,8 @@
     // Inicializa tus funciones si existen en tu plantilla
     if (typeof initEmbers === 'function') {
       initEmbers();
-    }
+    });
     
-    // Activa el intervalo para empezar a crear las hojas otoñales
-    setInterval(createLeaf, 800);
-  });
-
-  // ==========================================
-  // 2. FUNCIÓN PARA CREAR HOJAS DINÁMICAS
-  // ==========================================
-  const leafTypes = ['🍁', '🍂', '🔥']; 
-
-  function createLeaf() {
-    const container = document.getElementById('leaf-container');
-    if (!container) return; // Seguridad si el contenedor no ha cargado
-
-    const leaf = document.createElement('div');
-    leaf.classList.add('leaf');
-    
-    // Configuración aleatoria de iconos, posiciones y tamaños
-    leaf.innerText = leafTypes[Math.floor(Math.random() * leafTypes.length)];
-    leaf.style.left = Math.random() * 100 + 'vw';
-    leaf.style.fontSize = Math.random() * 15 + 18 + 'px'; 
-    
-    const duration = Math.random() * 5 + 6; 
-    leaf.style.animationDuration = duration + 's';
-    
-    // Alterna el brillo usando tus variables de color CSS accent y accent-2
-    if (Math.random() > 0.5) {
-      leaf.style.filter = 'drop-shadow(0 0 5px var(--accent-2, #ff8c00))';
-    } else {
-      leaf.style.filter = 'drop-shadow(0 0 5px var(--accent, #ff4500))';
-    }
-    
-    container.appendChild(leaf);
-
-    // Limpieza de memoria eliminando la hoja al terminar la animación
-    setTimeout(() => {
-      leaf.remove();
-    }, duration * 1000);
-  }
 </script>
 </body>
 </html>
