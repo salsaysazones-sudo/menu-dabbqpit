@@ -12,8 +12,10 @@
    #spooky-layer {
     position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh
     pointer-events: none;
-    z-index: 5;
+    z-index: 9999;
     overflow: hidden;
   }
 
@@ -660,7 +662,6 @@
   (function() {
   const layer = document.getElementById('spooky-layer');
   if (!layer) return;
-      window.spawn = spawn;
 
   /* ══ Calaverita de azúcar (estilo tiza BBQ) ══ */
   const SKULL_SVG = `
@@ -722,6 +723,7 @@
     </svg>`;
 
   function spawn() {
+      window.spawn = spawn;
     const isSkull = Math.random() > 0.42;
     const wrap = document.createElement('div');
     wrap.className = 'spooky';
