@@ -770,7 +770,13 @@
     // Inicializa tus funciones si existen en tu plantilla
     if (typeof initEmbers === 'function') {
       initEmbers();
-    });
+    }
+        // 2. Inicializa las calaveritas (forzado directo aquí)
+      if (typeof spawn === 'function') {
+          spawn();
+          setInterval(spawn, 2200);
+    }
+ }); 
     
 </script>
 </body>
