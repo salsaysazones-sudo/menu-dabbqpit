@@ -644,7 +644,7 @@
         grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${alpha})`);
         grad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
         ctx.fillStyle = grad;
-        ctx.arc(e.x, e.y, e.size * 4, 0, Math.PI * 2);
+        ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2);
         ctx.fill();
       }
       
